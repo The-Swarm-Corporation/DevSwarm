@@ -1,67 +1,99 @@
-[![Multi-Modality](agorabanner.png)](https://discord.com/servers/agora-999382051935506503)
+DevSwarm
+ 
+Develop production-grade applications effortlessly with a single prompt, powered by a swarm of v0-driven autonomous agents operating 24/7 for fully autonomous software development.
+Prompt → App
+DevSwarm leverages a structured multi-agent system, orchestrated by a CTO agent, to deliver seamless, high-quality software development with continuous updates, autonomous deployment, and customizable configurations.
+Features
 
-# Python Package Template
+Structured Multi-Agent Team: Eight specialized developer agents collaborate to build robust applications.
+CTO Agent Oversight: A dedicated CTO agent directs the team, ensuring strategic alignment and efficiency.
+24/7 Autonomous Development: Continuous code updates run around the clock for rapid development cycles.
+Autonomous Deployment: Seamlessly deploy applications on Vercel with zero manual intervention.
+Fully Customizable Settings: Flexible parameters allow tailored workflows to meet specific project needs.
+Autonomous Testing & Improvement: Built-in unit tests and continuous improvement ensure code quality.
 
-[![Join our Discord](https://img.shields.io/badge/Discord-Join%20our%20server-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/agora-999382051935506503) [![Subscribe on YouTube](https://img.shields.io/badge/YouTube-Subscribe-red?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@kyegomez3242) [![Connect on LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kye-g-38759a207/) [![Follow on X.com](https://img.shields.io/badge/X.com-Follow-1DA1F2?style=for-the-badge&logo=x&logoColor=white)](https://x.com/kyegomezb)
+Powered By
 
-A easy, reliable, fluid template for python packages complete with docs, testing suites, readme's, github workflows, linting and much much more
+Swarms for multi-agent orchestration
+v0 for AI-driven development
+
+Installation
+
+Note: DevSwarm is currently in early access. Follow these steps to set up the environment.
+
+Prerequisites
+
+Node.js (v16 or higher)
+Vercel CLI (npm install -g vercel)
+Git
+API keys for Swarms and v0 (request access via their respective platforms)
+
+Steps
+
+Clone the repository:git clone https://github.com/devswarm/devswarm.git
+cd devswarm
 
 
-## Installation
-
-You can install the package using pip
-
-```bash
-pip install -e .
-```
-
-# Usage
-```python
-print("hello world")
-
-```
+Install dependencies:npm install
 
 
-
-### Code Quality 🧹
-
-- `make style` to format the code
-- `make check_code_quality` to check code quality (PEP8 basically)
-- `black .`
-- `ruff . --fix`
-
-### Tests 🧪
-
-[`pytests`](https://docs.pytest.org/en/7.1.x/) is used to run our tests.
-
-### Publish on PyPi 🚀
-
-**Important**: Before publishing, edit `__version__` in [src/__init__](/src/__init__.py) to match the wanted new version.
-
-```
-poetry build
-poetry publish
-```
-
-### CI/CD 🤖
-
-We use [GitHub actions](https://github.com/features/actions) to automatically run tests and check code quality when a new PR is done on `main`.
-
-On any pull request, we will check the code quality and tests.
-
-When a new release is created, we will try to push the new code to PyPi. We use [`twine`](https://twine.readthedocs.io/en/stable/) to make our life easier. 
-
-The **correct steps** to create a new realease are the following:
-- edit `__version__` in [src/__init__](/src/__init__.py) to match the wanted new version.
-- create a new [`tag`](https://git-scm.com/docs/git-tag) with the release name, e.g. `git tag v0.0.1 && git push origin v0.0.1` or from the GitHub UI.
-- create a new release from GitHub UI
-
-The CI will run when you create the new release.
-
-# Docs
-We use MK docs. This repo comes with the zeta docs. All the docs configurations are already here along with the readthedocs configs.
+Configure environment variables:
+Create a .env file in the root directory.
+Add the following:SWARMS_API_KEY=your_swarms_api_key
+V0_API_KEY=your_v0_api_key
+VERCEL_TOKEN=your_vercel_token
 
 
 
-# License
-MIT
+
+Start the DevSwarm CLI:npm run start
+
+
+
+Usage
+
+Initialize a Project:Run the following command and provide a prompt describing your application:devswarm init "Create a full-stack e-commerce platform with React and Node.js"
+
+
+Monitor Development:The CTO agent will assign tasks to developer agents, and code updates will be logged in real-time.
+Deploy to Vercel:Once the application is ready, DevSwarm automatically deploys to Vercel. Access the deployment URL in the logs.
+Customize Settings:Modify configurations in config/devswarm.json to adjust agent behavior, testing frequency, or deployment options.
+
+Example Prompt
+"Build a task management app with a React frontend, Express backend, and MongoDB integration."
+
+Configuration
+Customize DevSwarm via the config/devswarm.json file. Key options include:
+
+agentCount: Number of developer agents (default: 8)
+updateInterval: Frequency of code updates (in seconds)
+testCoverage: Minimum unit test coverage percentage
+deploymentPlatform: Target platform (default: "vercel")
+
+Example configuration:
+{
+  "agentCount": 8,
+  "updateInterval": 3600,
+  "testCoverage": 90,
+  "deploymentPlatform": "vercel"
+}
+
+Contributing
+We welcome contributions to DevSwarm! To get started:
+
+Fork the repository.
+Create a feature branch (git checkout -b feature/your-feature).
+Commit your changes (git commit -m 'Add your feature').
+Push to the branch (git push origin feature/your-feature).
+Open a pull request.
+
+Please follow our Code of Conduct and review the Contributing Guidelines.
+License
+DevSwarm is licensed under the MIT License.
+Contact
+For support or inquiries, reach out to us at:
+
+Email: support@devswarm.dev
+Twitter: @DevSwarm
+
+Join the future of autonomous software development with DevSwarm! 🚀
