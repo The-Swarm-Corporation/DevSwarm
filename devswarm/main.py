@@ -17,45 +17,43 @@ load_dotenv()
 api_key = "v1:q6m3Bw6iDf9vXd369ji39TtB:wuJjZPvPHdHdzm8TCIs7MDX2"
 
 
-
 def install_packages_and_run(directory: str):
     """
     Install packages and run the code in the given directory.
-    
+
     Args:
         directory (str): The directory containing the project to install and run
-        
+
     Returns:
         Dict[str, str]: Dictionary containing the output of npm install and npm run dev commands
     """
     results = {}
-    
+
     try:
         # Store original directory
         original_dir = os.getcwd()
-        
+
         # Change to project directory
         os.chdir(directory)
-        
+
         # Run npm install and capture output
         install_process = os.popen("npm install")
         install_output = install_process.read()
         results["npm_install"] = install_output
-        
+
         # Run npm run dev and capture output
         dev_process = os.popen("npm run dev")
         dev_output = dev_process.read()
         results["npm_run_dev"] = dev_output
-        
+
         # Return to original directory
         os.chdir(original_dir)
-        
+
         return json.dumps(results, indent=4)
-        
+
     except Exception as e:
         results["error"] = str(e)
         return results
-
 
 
 def extract_files_from_string(content: str) -> List[Dict[str, str]]:
@@ -380,7 +378,7 @@ def create_product_spec(task: str) -> str:
         agent_description="Expert product specification and planning agent",
         # system_prompt=PRODUCT_SPEC_PROMPT,
         max_loops=1,
-        model_name='claude-3-5-sonnet-20240620',
+        model_name="claude-3-5-sonnet-20240620",
         dynamic_temperature_enabled=True,
         output_type="final",
     )
@@ -419,20 +417,17 @@ def dev_swarm(task: str, output_dir: str = "frontend_app"):
         dynamic_temperature_enabled=True,
         output_type="final",
     )
-    
+
     code = ""
 
     # Implement the frontend solution
     implementation = dev_agent.run(
         f"Based on this product specification:\n\n{spec}\n\nImplement the frontend solution. Build the code in the {output_dir} directory"
     )
-    
+
     code += implementation
-    
+
     # Process the code blocks
     process_code_blocks(code, output_dir)
 
     return code
-
-
-
