@@ -1,116 +1,85 @@
 # DevSwarm
 
-Develop production-grade applications effortlessly with a single prompt, powered by a swarm of v0-driven autonomous agents operating 24/7 for fully autonomous software development.
-
-**Prompt → App**
-
-DevSwarm leverages a structured multi-agent system, orchestrated by a CTO agent, to deliver seamless, high-quality software development with continuous updates, autonomous deployment, and customizable configurations.
+Develop production-grade applications effortlessly with a single prompt, powered by a swarm of AI-driven autonomous agents. DevSwarm combines the power of Swarms and v0.dev to create a seamless development experience.
 
 ## Features
 
-- **Structured Multi-Agent Team**: Eight specialized developer agents collaborate to build robust applications.
-- **CTO Agent Oversight**: A dedicated CTO agent directs the team, ensuring strategic alignment and efficiency.
-- **24/7 Autonomous Development**: Continuous code updates run around the clock for rapid development cycles.
-- **Autonomous Deployment**: Seamlessly deploy applications on Vercel with zero manual intervention.
-- **Fully Customizable Settings**: Flexible parameters allow tailored workflows to meet specific project needs.
-- **Autonomous Testing & Improvement**: Built-in unit tests and continuous improvement ensure code quality.
+| Feature | Description |
+|---------|-------------|
+| AI-Powered Development | Leverages v0.dev and Swarms for intelligent code generation |
+| Product Specification Generation | Automatically creates detailed product specifications |
+| Frontend Development | Generates complete frontend applications with modern best practices |
+| Type-Safe Code | Generates TypeScript/React applications with proper type definitions |
+| Automated File Structure | Creates organized project structures with all necessary files |
 
-## Powered By
+## Prerequisites
 
-- [Swarms](https://github.com/swarms) for multi-agent orchestration
-- [v0](https://v0.dev) for AI-driven development
+- Python 3.8 or higher
+- v0.dev API key
+- Node.js (for running generated frontend applications)
 
 ## Installation
 
-> **Note**: DevSwarm is currently in early access. Follow these steps to set up the environment.
-
-### Prerequisites
-- Node.js (v16 or higher)
-- Vercel CLI (`npm install -g vercel`)
-- Git
-- API keys for Swarms and v0 (request access via their respective platforms)
-
-### Steps
 1. Clone the repository:
+   
    ```bash
-   git clone https://github.com/devswarm/devswarm.git
-   cd devswarm
+   git clone https://github.com/The-Swarm-Corporation/DevSwarm.git
+   cd DevSwarm
    ```
-2. Install dependencies:
+
+2. Install Python dependencies:
    ```bash
-   npm install
+   pip install -r requirements.txt
    ```
-3. Configure environment variables:
-   - Create a `.env` file in the root directory.
-   - Add the following:
-     ```plaintext
-     SWARMS_API_KEY=your_swarms_api_key
-     V0_API_KEY=your_v0_api_key
-     VERCEL_TOKEN=your_vercel_token
-     ```
-4. Start the DevSwarm CLI:
-   ```bash
-   npm run start
+
+3. Set up environment variables:
+   Create a `.env` file in the root directory with:
+   ```plaintext
+   V0_API_KEY=your_v0_api_key
    ```
 
 ## Usage
 
-1. **Initialize a Project**:
-   Run the following command and provide a prompt describing your application:
-   ```bash
-   devswarm init "Create a full-stack e-commerce platform with React and Node.js"
-   ```
-2. **Monitor Development**:
-   The CTO agent will assign tasks to developer agents, and code updates will be logged in real-time.
-3. **Deploy to Vercel**:
-   Once the application is ready, DevSwarm automatically deploys to Vercel. Access the deployment URL in the logs.
-4. **Customize Settings**:
-   Modify configurations in `config/devswarm.json` to adjust agent behavior, testing frequency, or deployment options.
+The DevSwarm package provides several key functions:
 
-### Example Prompt
-```plaintext
-"Build a task management app with a React frontend, Express backend, and MongoDB integration."
-```
+1. **Creating Product Specifications**:
+   ```python
+   from devswarm.main import create_product_spec
+   
+   spec = create_product_spec("Create a todo list application")
+   ```
+
+2. **Generating Frontend Applications**:
+   ```python
+   from devswarm.main import dev_swarm
+   
+   result = dev_swarm("Create a todo list application", output_dir="my_app")
+   ```
+
+3. **Running Generated Applications**:
+   After generation, navigate to the output directory and run:
+   
+   ```bash
+   cd my_app
+   npm install
+   npm run dev
+   ```
 
 ## Configuration
 
-Customize DevSwarm via the `config/devswarm.json` file. Key options include:
+DevSwarm uses the following AI models:
+- Swarms: Uses Claude 3.5 Sonnet for product specification
 
-- `agentCount`: Number of developer agents (default: 8)
-- `updateInterval`: Frequency of code updates (in seconds)
-- `testCoverage`: Minimum unit test coverage percentage
-- `deploymentPlatform`: Target platform (default: "vercel")
-
-Example configuration:
-```json
-{
-  "agentCount": 8,
-  "updateInterval": 3600,
-  "testCoverage": 90,
-  "deploymentPlatform": "vercel"
-}
-```
+- v0.dev: Uses v0-1.5-md model for code generation
 
 ## Contributing
 
-We welcome contributions to DevSwarm! To get started:
-
-1. Fork the repository.
-2. Create a feature branch (`git checkout -b feature/your-feature`).
-3. Commit your changes (`git commit -m 'Add your feature'`).
-4. Push to the branch (`git push origin feature/your-feature`).
-5. Open a pull request.
-
-Please follow our [Code of Conduct](CODE_OF_CONDUCT.md) and review the [Contributing Guidelines](CONTRIBUTING.md).
+We welcome contributions! Please feel free to submit a Pull Request.
 
 ## License
 
-DevSwarm is licensed under the [MIT License](LICENSE).
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Contact
+## Support
 
-For support or inquiries, reach out to us at:
-- Email: support@devswarm.dev
-- Twitter: [@DevSwarm](https://twitter.com/DevSwarm)
-
-Join the future of autonomous software development with DevSwarm! 🚀
+For support or questions, please open an issue on the GitHub repository.
