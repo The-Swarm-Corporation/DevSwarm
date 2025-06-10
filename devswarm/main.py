@@ -1,6 +1,3 @@
-# 'v0-1.0-md'
-# https://api.v0.dev/v1/chat/completions
-
 import json
 import os
 import re
@@ -157,10 +154,6 @@ class V0APIClient:
         """
         self.api_key = api_key
         self.system_prompt = system_prompt
-        if not self.api_key:
-            raise ValueError(
-                "API key must be provided or set as V0_API_KEY environment variable."
-            )
         self.available_models = [
             "v0-1.0-md",
             "v0-1.5-md",
