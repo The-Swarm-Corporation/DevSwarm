@@ -14,7 +14,7 @@ from swarms import Agent
 load_dotenv()
 
 
-api_key = "v1:q6m3Bw6iDf9vXd369ji39TtB:wuJjZPvPHdHdzm8TCIs7MDX2"
+api_key = os.getenv("V0_API_KEY")
 
 
 def install_packages_and_run(directory: str):
